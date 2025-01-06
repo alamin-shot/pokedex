@@ -1,0 +1,100 @@
+/* src/styles.css */
+* {
+	color: #fff;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #333;
+}
+
+.navbar {
+	background-color: crimson;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
+
+.navbar a {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	margin: 0 15px;
+	text-decoration: none;
+}
+
+.pokemon-list {
+	padding-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.pokemon-card {
+	background: #666;
+	padding: 20px;
+	border-radius: 8px;
+	width: 150px;
+	text-align: center;
+}
+
+
+
+.pokemon-details {
+	text-align: center;
+}
+
+.favorite-pokemon {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 18px;
+	color: tomato;
+}
+
+strong {
+	color: aliceblue;
+}
+
+p {
+	color: tomato;
+}
+
+.search-bar {
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar input {
+	outline: none;
+	font-size: 16px;
+	padding: 10px;
+	width: 300px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	background-color: #999;
+}
+
+::placeholder {
+	color: #fff;
+	font-size: 16px;
+}
+
+button {
+	padding: 5px;
+	color: #fff;
+	border: 1px solid crimson;
+	border-radius: 5px;
+	background-color: darkred;
+}
