@@ -13,7 +13,12 @@ const PokemonDetails = ({ onFavorite }) => {
 			.catch((err) => console.error(err));
 	}, [name]);
 
-	if (!pokemon) return <div>...LOADING</div>;
+	if (!pokemon) return (
+			<div className="loading_state">
+				<img src={pokeball} alt="" />
+				<h1>Gotta Catch `Em All!</h1>
+			</div>
+		);
 
 	return (
 		<div className="pokemon-details">
