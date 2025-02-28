@@ -31,7 +31,9 @@ const PokemonList = ({ searchTerm }) => {
 							alt={pokemon.name}
 						/>
 						<h3>{pokemon.name}</h3>
-						<Link to={`/pokemon/${pokemon.name}`}>View Details</Link>
+						<div className="view_details">
+							<Link to={`/pokemon/${pokemon.name}`}>View Details</Link>
+						</div>
 					</div>
 				))}
 			</div>

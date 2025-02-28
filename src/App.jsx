@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import Navbar from "./components/Navbar.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import HomePage from "./pages/HomePage.jsx";
@@ -9,6 +9,7 @@ import FavoritePage from "./pages/FavoritePage.jsx";
 const App = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [favorites, setFavorites] = useState([]);
+	const location = useLocation();
 
 	const handleFavorites = (pokemon) => {
 		if (!favorites.find((fav) => fav.name === pokemon.name)) {
@@ -18,21 +19,21 @@ const App = () => {
 
 	return (
 		<>
-			<Router>
-				<Navbar />
+			<Navbar />
+			{location.pathname === "/" && (
 				<SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-				<Routes>
-					<Route path="/" element={<HomePage searchTerm={searchTerm} />} />
-					<Route
-						path="/pokemon/:name"
-						element={<PokemonDetails onFavorite={handleFavorites} />}
-					/>
-					<Route
-						path="favorites"
-						element={<FavoritePage favorites={favorites} />}
-					/>
-				</Routes>
-			</Router>
+			)}
+			<Routes>
+				<Route path="/" element={<HomePage searchTerm={searchTerm} />} />
+				<Route
+					path="/pokemon/:name"
+					element={<PokemonDetails onFavorite={handleFavorites} />}
+				/>
+				<Route
+					path="favorites"
+					element={<FavoritePage favorites={favorites} />}
+				/>
+			</Routes>
 		</>
 	);
 };
